@@ -6,20 +6,27 @@ fn main() {
     display_numbers(&numbers);
 
     let largest = get_largest(&numbers);
-    println!("the largest number is {largest}.");
+    if numbers.len() != 0 {
+        println!("largest = {largest}");
+    }
 }
 
-fn init_numbers(numbers: &mut [u32]) {
+fn init_numbers(numbers: &mut [u32]) -> () {
     for i in 0..numbers.len() {
         numbers[i] = thread_rng().gen_range(0..100);
     }
 }
 
-fn display_numbers(numbers: &[u32]) {
+fn display_numbers(numbers: &[u32]) -> () {
+    print!("numbers = [");
     for i in 0..numbers.len() {
-        print!("{}, ", numbers[i]);
+        if i < numbers.len() - 1 {
+            print!("{}, ", numbers[i]);
+        } else {
+            print!("{}", numbers[i]);
+        }
     }
-    println!();
+    println!("]");
 }
 
 fn get_largest(numbers: &[u32]) -> &u32 {
