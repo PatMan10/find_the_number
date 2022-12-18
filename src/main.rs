@@ -5,7 +5,7 @@ fn main() {
     init_numbers(&mut numbers);
     display_numbers(&numbers);
 
-    let largest = largest(&numbers);
+    let largest = get_largest(&numbers);
     println!("the largest number is {largest}.");
 }
 
@@ -22,10 +22,10 @@ fn display_numbers(numbers: &[u32]) {
     println!();
 }
 
-fn largest(numbers: &[u32]) -> &u32 {
+fn get_largest(numbers: &[u32]) -> &u32 {
     let mut cur_largest: &u32 = &0;
     for num in numbers {
-        if num >= cur_largest {
+        if num > cur_largest {
             cur_largest = num;
         }
     }
