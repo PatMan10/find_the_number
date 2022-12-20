@@ -1,4 +1,4 @@
 # Find the Number
 
-A simple program that reads a size from std in, inits an array with the size, fills it with random numbers and then finds the largest/smallest number.
+A simple program that looks for the min or max number in a list based on user input.
 
