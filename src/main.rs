@@ -1,8 +1,6 @@
 use rand::{thread_rng, Rng};
 use std::io::stdin;
 
-const READ_FAIL: &str = "Failed to read input.";
-
 fn main() {
     clear_cli();
     println!("------------ Find The Number ------------\n");
@@ -27,6 +25,8 @@ fn main() {
 fn clear_cli() {
     print!("{esc}[2J{esc}[1;1H", esc = 27 as char);
 }
+
+const READ_FAIL: &str = "Failed to read input.";
 
 fn get_array_size() -> u32 {
     let size: u32;
