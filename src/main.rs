@@ -72,7 +72,7 @@ fn get_min_or_max() -> String {
     input
 }
 
-fn find_number<'a>(numbers: &'a [u32], min_or_max: &'a String) -> &'a u32 {
+fn find_number(numbers: &[u32], min_or_max: &String) -> u32 {
     let mut cur_number: &u32 = if min_or_max == "min" { &1000 } else { &0 };
     for num in numbers {
         if min_or_max == "min" {
@@ -85,7 +85,7 @@ fn find_number<'a>(numbers: &'a [u32], min_or_max: &'a String) -> &'a u32 {
             }
         }
     }
-    cur_number
+    *cur_number
 }
 
 fn display_numbers(numbers: &[u32]) -> () {
